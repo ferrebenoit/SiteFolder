@@ -1,0 +1,14 @@
+
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'sitefolder-application'
+    version = '0.1.0'
+}
+
+dependencies {
+    compile("com.h2database:h2")
+    compile project(':sitefolder-site')
+    compile project(':sitefolder-gui-vaadin')
+}
+

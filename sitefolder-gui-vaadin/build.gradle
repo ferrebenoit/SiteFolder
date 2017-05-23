@@ -1,0 +1,18 @@
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'sitefolder-gui-vaadin'
+    version = '0.1.0'
+}
+
+dependencyManagement {
+   	imports {
+   		mavenBom 'com.vaadin:vaadin-bom:8.0.0'
+  	}
+}
+
+dependencies {
+    compile("com.vaadin:vaadin-spring-boot-starter:2.0-SNAPSHOT")
+    compile("com.google.guava:guava:21.0")
+	compile project(":sitefolder-site")
+}

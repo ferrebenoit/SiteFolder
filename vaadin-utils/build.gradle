@@ -1,0 +1,21 @@
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'vaadin-utils'
+    version = '0.1.0'
+}
+
+dependencyManagement {
+   	imports {
+   		mavenBom 'com.vaadin:vaadin-bom:8.0.0'
+  	}
+}
+
+dependencies {
+	compile("org.vaadin:viritin:2.0.beta1")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("com.vaadin:vaadin-spring-boot-starter:2.0-SNAPSHOT")
+	//compile("com.fasterxml.jackson.core:jackson-databind")
+    //compile("org.springframework.boot:spring-boot-starter-data-rest")
+    
+}

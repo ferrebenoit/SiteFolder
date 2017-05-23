@@ -1,0 +1,57 @@
+allprojects {
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+	
+	group 'org.distribution'
+} 
+
+subprojects {
+    apply plugin: 'java'
+    
+   
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8  
+
+
+	project.ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+
+    buildscript {
+	    repositories {
+	    
+	        // maven { url "http://repo.spring.io/libs-release" } test
+	        mavenLocal()
+	        jcenter()
+	        mavenCentral()
+	    }
+	    
+	    dependencies {
+	        classpath("org.springframework.boot:spring-boot-gradle-plugin:$project.ext.springBootVersion")
+	    }
+	}
+	
+	dependencies {
+		compile('org.springframework.boot:spring-boot-starter')
+		//compile("com.vaadin:vaadin-spring-boot-starter")
+		testCompile('org.springframework.boot:spring-boot-starter-test')
+		
+	}
+   	
+   	repositories {
+	    //mavenLocal()
+	    mavenCentral()
+	    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    	maven { url "http://oss.sonatype.org/content/repositories/vaadin-snapshots/" }
+    	maven { url "http://maven.vaadin.com/vaadin-addons" }
+	    //maven { url "https://repo.spring.io/libs-release" }
+	    //maven { url "http://mvnrepository.com/" }
+	}
+	
+
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}

@@ -4,7 +4,6 @@ import org.benoit.utils.vaadin.VaadinRepositoryEditor;
 import org.sitefolder.Site;
 import org.sitefolder.repository.SiteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.vaadin.viritin.grid.MGrid;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
@@ -16,6 +15,11 @@ import com.vaadin.ui.Label;
 @UIScope
 public class SiteEditor extends VaadinRepositoryEditor<SiteRepository> {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5537839469178765506L;
+
 	@Autowired
 	public SiteEditor(SiteRepository repo) {
 		super(repo);

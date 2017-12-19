@@ -1,0 +1,14 @@
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'sitefolder-site-client'
+    version = '0.1.0'
+}
+
+
+dependencies {
+	compile("com.fasterxml.jackson.core:jackson-databind")
+	compile("org.springframework.boot:spring-boot-starter-data-rest:$project.ext.springBootVersion")
+	
+	compile project(":sitefolder-utils-rest")
+}

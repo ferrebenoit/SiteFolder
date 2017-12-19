@@ -1,24 +1,13 @@
 package org.sitefolder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
 public class Site {
-	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	//@Column(name = "COMPUTER_ID")
 	private Long id;
 	
 	private String name;
 	
-	@OneToOne
 	private Address address;
 	
 	public Address getAddress() {

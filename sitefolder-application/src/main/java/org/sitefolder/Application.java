@@ -4,9 +4,6 @@ import org.sitefolder.repository.AddressRepository;
 import org.sitefolder.repository.SiteRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-
-import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,14 +26,14 @@ public class Application {
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
-		System.out.println("Let's inspect the beans provided by Spring Boot: test");
-
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+		/*ApplicationContext ctx = */SpringApplication.run(Application.class, args);
+//		System.out.println("Let's inspect the beans provided by Spring Boot: test");
+//
+//        String[] beanNames = ctx.getBeanDefinitionNames();
+//        Arrays.sort(beanNames);
+//        for (String beanName : beanNames) {
+//            System.out.println(beanName);
+//        }
 	}
 
 //	@Bean
@@ -73,12 +70,19 @@ public class Application {
 			repository.save(new Site("Site5"));
 			
 			// fetch all customers
-						log.info("Sites found with findAll():");
-						log.info("-------------------------------");
-						for (Site site1 : repository.findAll()) {
-							log.info(site1.toString());
-						}
-						log.info("");
+//						log.info("Sites found with findAll():");
+//						log.info("-------------------------------");
+//						for (Site site1 : repository.findAll()) {
+//							log.info(site1.getName());
+//						}
+//						log.info("");
+			
+			log.info("Address found with findAll():");
+			log.info("-------------------------------");
+			for (Address addr : addressRepository.findAll()) {
+				log.info(addr.getCity());
+			}
+			log.info("");
 		};
 
 			

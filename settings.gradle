@@ -17,9 +17,12 @@ include 'services:webservice'
 */
 
 rootProject.name = 'sitefolder'
-include 'sitefolder-application',
+include 'sitefolder-client',
+		'sitefolder-site-client',
+		'sitefolder-application',
 		'sitefolder-site',
 		'sitefolder-gui-vaadin',
-		'vaadin-utils'
+		'vaadin-utils',
+		'sitefolder-utils-rest'
 		//'SiteFolder-Address'
 		//'SiteFolder-PostalCode
